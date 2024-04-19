@@ -1,0 +1,237 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Source Serif 4", serif;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+li {
+  list-style-type: none;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 20px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  /* background-color: aquamarine; */
+  height: 100px;
+
+  .main-menu-list {
+    display: flex;
+    gap: 10px;
+  }
+  img {
+    width: 200px;
+  }
+  i {
+    font-size: 20px;
+  }
+  .third-section {
+    display: flex;
+    gap: 20px;
+
+    input,
+    button {
+      padding: 10px 20px;
+      border-radius: 20px;
+      border-width: 2px;
+      background-color: rgb(255, 244, 244);
+    }
+    .signup-btn {
+      background-color: black;
+      color: white;
+    }
+    .login-btn {
+      background-color: transparent;
+    }
+  }
+}
+
+/* card section */
+.card-section {
+  padding: 20px;
+  margin: auto;
+  .cards-container {
+    display: grid;
+    grid-template-columns: 3fr 3fr 3fr 3fr;
+    gap: 20px;
+  }
+
+  h1 {
+    text-align: center;
+    font-weight: 400;
+    padding-bottom: 30px;
+  }
+  .cardimg {
+    width: 320px;
+    border-radius: 20px;
+  }
+  .caption {
+    display: flex;
+  }
+  .namesection {
+    display: flex;
+  }
+  .namesection img {
+    width: 30px;
+  }
+}
+
+/* slider css start */
+.slider {
+  overflow: hidden;
+  white-space: nowrap;
+
+  img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+  }
+  .container {
+    display: inline-block;
+    animation-name: animi;
+    animation-duration: 12s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+}
+
+/* .container:hover {
+  animation: none;
+} */
+@keyframes animi {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* slider css end */
+
+/* text slider*/
+
+.text-slider {
+  overflow: hidden;
+  white-space: nowrap;
+  .text-container {
+    display: inline-block;
+    .card {
+      text-align: center;
+      margin: 20px;
+      border-radius: 20px;
+      width: 300px;
+      height: 250px;
+      display: inline-block;
+      overflow-x: hidden;
+      box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+        rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+      img {
+        width: 300px;
+        height: 200px;
+      }
+    }
+    animation: animi 20s infinite linear;
+  }
+}
+
+/*  center btn animation */
+
+.center-btn {
+  background-color: pink;
+  width: fit-content;
+  margin: auto;
+  padding: 10px 20px;
+  border-radius: 20px;
+  margin-top: 20px;
+  animation-name: bg-color-change;
+  animation-duration: 15s;
+  animation-iteration-count: infinite;
+  animation-timing-function: all linear 1s;
+}
+
+@keyframes bg-color-change {
+  0% {
+    background-color: pink;
+  }
+  25% {
+    background-color: greenyellow;
+  }
+  50% {
+    background-color: red;
+    color: white;
+  }
+  75% {
+    background-color: yellow;
+  }
+  100% {
+    background-color: orange;
+  }
+}
+
+/* dropdown css */
+.dropdown {
+  position: relative;
+}
+.dropdown-list {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  background-color: antiquewhite;
+  padding: 20px;
+  width: 150px;
+  display: none;
+}
+.dropdown:hover .dropdown-list {
+  display: block;
+}
+/* 
+hide --> display none
+show --> display block
+*/
+
+.menu-icon {
+  display: none;
+}
+.menu-link {
+  display: block;
+}
+/* tablet */
+@media screen and (max-width: 900px) {
+  .menu-icon {
+    display: block;
+  }
+  .menu-link {
+    display: none;
+  }
+  .card-section .cards-container {
+    grid-template-columns: 6fr 6fr;
+  }
+}
+/* mobile */
+@media screen and (max-width: 600px) {
+  .menu-icon {
+    display: block;
+  }
+  .menu-link {
+    display: none;
+  }
+  .card-section .cards-container {
+    grid-template-columns: 12fr;
+  }
+  .search-bar {
+    display: none;
+  }
+}
+/* 
+lp - 1200px;
+tab - 800px;
+mobile 600px;
+*/
